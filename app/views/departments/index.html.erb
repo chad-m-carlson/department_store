@@ -1,0 +1,11 @@
+<h1>Department Store</h1>
+<h4>5 things you need, 100 you don't</h4>
+<hr />
+<h3> Check out our departments</h3>
+  <% @departments.each do |department| %>
+   <h4> <%= link_to  department.name, department_path(department.id) %> </h4>
+         
+   <p>  <%= department.description %> </p>
+
+<% end %>
+
