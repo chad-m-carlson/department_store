@@ -12,6 +12,8 @@
     <hr />
     <% end %>
   </h4>
+  <%= link_to  "Add more items to this department", new_department_item_path(@department.id) %>
+  <br />
 <%= link_to  "Back to Department page", department_path(@department.id) %>
 
 
