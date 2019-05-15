@@ -4,8 +4,12 @@
 <h3> Check out our departments</h3>
   <% @departments.each do |department| %>
    <h4> <%= link_to  department.name, department_path(department.id) %> </h4>
-         
    <p>  <%= department.description %> </p>
-
+   <br />
+   <br />
 <% end %>
+<hr />
+<br />
+<br />
+<%= link_to  "Make a new department", new_department_path %>
 
