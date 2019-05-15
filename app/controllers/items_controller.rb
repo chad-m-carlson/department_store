@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
 
 
   def index
-    @department = Department.find(params[:id])
+    @department = Department.find(params[:department_id])
+    @items = @department.items
   end
 
   def show
@@ -22,7 +23,7 @@ class ItemsController < ApplicationController
     @department = Department.find(params[:department_id])
     @item = @department.items.new(params.require(:item).permit(:name, :description, :price))
     if @item.save
-      redirect_to department_item_path(@department, @item)
+      redirect_to department_items_path(@department, @item)
     else
       render :new
     end
