@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @department = Department.find(params[:id])
+    @department = Department.find(params[:department_id])
     @item = Item.find(params[:id])
   end
 
@@ -30,14 +30,32 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @department = Department.find(params[:id])
+    @department = Department.find(params[:department_id])
     @item = Item.find(params[:id])
+    render partial: "form"
   end
+
+  def update
+    @department = Department.find(params[:department_id])
+    @item = Item.find(params[:id])
+    if @item.update(params.require(:item).permit(:name, :description, :price))
+      redirect_to department_items_path(@department, @item)
+    else
+      render partial: "form"
+    end
+  end 
+
+  def destroy
+    @department = Department.find(params[:department_id])
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to department_items_path(@department)
+  end 
 
   private
 
     def set_department
-      @department = Department.find(params[:id])
+      @department = Department.find(params[:department_id])
     end
 
 

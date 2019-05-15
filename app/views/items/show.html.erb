@@ -4,6 +4,11 @@
 <br />
 
 <p> 
+  <%= link_to  "Back", department_items_path(@department.id) %>
+  <br />
     <%= link_to  "Add more items to this department", new_department_item_path(@department.id) %>
-    <%= link_to  "Edit this item", edit_department_item_path(@department.id, @item.id) %><%= link_to  "Delete this item", department_item_path, method: :delete %>
+    <br />
+    <%= link_to  "Edit this item", edit_department_item_path(@department.id, @item.id) %>
+    <br />
+    <%= link_to  "Delete this item", department_item_path, method: :delete %>
   </p>

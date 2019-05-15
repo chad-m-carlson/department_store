@@ -1,12 +1,17 @@
-<h1> Check out all of our <%= @department.name%> items</h1>
+<h1> Check out all of our <%= @department.name%><h1>
 <br />
 <hr />
-<% @items.each do |item| %>
-<h3> Item Name: <%= item.name %></h3>
-<h3> Description: <%= item.description %></h3>
-<h3> Price: <%= item.price %></h3>
-<hr />
-<% end %>
+<h4>
+
+  <% @items.each do |item| %>
+  <%= link_to  item.name, department_item_path(@department.id, item) %>
+  <!-- <h3> Item Name: <%= item.name %></h3>
+    <h3> Description: <%= item.description %></h3>
+    <h3> Price: <%= item.price %></h3> -->
+    
+    <hr />
+    <% end %>
+  </h4>
 <%= link_to  "Back to Department page", department_path(@department.id) %>
 
 

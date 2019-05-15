@@ -17,5 +17,8 @@
   <%= f.number_field(:price, in: 1.0..1000.0, step: 0.5) %>
   <%= f.submit %>
 <% end %>
+<br />
+<br />
+<%= link_to  "Back", department_items_path(@department.id) %>
 
 
