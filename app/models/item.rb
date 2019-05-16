@@ -1,4 +1,4 @@
 class Item < ApplicationRecord
   belongs_to :department
-  has_man :comments
+  has_many :comments
 end

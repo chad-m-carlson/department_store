@@ -1,0 +1,14 @@
+<h1>Make a comment on <%= @item.name  %> </h1>
+
+<%= form_for [@item, @comment] do |f| %>
+<%= f.label :author, "Name" %>
+<%= f.text_field :author %>
+<br />
+<br />
+<%= f.label :body, "Comment" %>
+<%= f.text_area :body %>
+<br />
+<%= f.submit %>
+<% end %>
+<br />
+<%= link_to  "Nevermind", department_item_path(@item.department_id, @item) %>

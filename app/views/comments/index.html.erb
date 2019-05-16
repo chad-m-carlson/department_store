@@ -1,0 +1,12 @@
+<h1>Comments on <%= @item.name  %></h1>
+<p>
+  <% @comment.each do |comment| %>
+  <hr />
+    <%= comment.body  %>
+    <h6><i>--<%= comment.author  %></i></h6>
+    <hr />
+  <% end %>
+</p>
+
+
+<%= link_to  "Go Back", department_item_path(@item.department_id, @item) %>
